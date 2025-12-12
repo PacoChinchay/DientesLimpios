@@ -31,6 +31,7 @@ namespace DientesLimpios.Dominio.Entidades
             PacienteId = pacienteId;
             DentistaId = dentistaId;
             ConsultorioId = consultorioId;
+            IntervaloDeTiempo = intervaloDeTiempo;
             Estado = EstadoCita.Programada;
             Id = Guid.CreateVersion7();
         }
