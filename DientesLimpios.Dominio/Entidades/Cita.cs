@@ -1,5 +1,6 @@
 ﻿using DientesLimpios.Dominio.Enums;
 using DientesLimpios.Dominio.Excepciones;
+using DientesLimpios.Dominio.ObjetosDeValor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,23 +16,16 @@ namespace DientesLimpios.Dominio.Entidades
         public Guid DentistaId { get; private set; }
         public Guid ConsultorioId { get; private set; }
         public EstadoCita Estado { get; private set; }
-        public DateTime FechaInicio { get; private set; }
-        public DateTime FechaFin { get; private set; }
+        public IntervaloDeTiempo IntervaloDeTiempo { get; private set; }
         public Paciente? Paciente { get; private set; }
         public Dentista? Dentista { get; private set; }
         public Consultorio? Consultorio { get; private set; }
 
-        public Cita(Guid pacienteId, Guid dentistaId, Guid consultorioId, 
-            DateTime fechaInicio, DateTime fechaFin)
+        public Cita(Guid pacienteId, Guid dentistaId, Guid consultorioId, IntervaloDeTiempo intervaloDeTiempo)
         {
-            if (fechaInicio > fechaFin)
+            if (intervaloDeTiempo.Inicio < DateTime.UtcNow)
             {
-                throw new ExcepcionDeReglaDeNegocio("La fecha de inicio no puede ser posterior a la fecha fin");
-            }
-
-            if(fechaInicio < DateTime.UtcNow)
-            {
-                throw new ExcepcionDeReglaDeNegocio("La fecha de inicio no puede ser anterior a la fecha actual");
+                throw new ExcepcionDeReglaDeNegocio($"La fecha de inicio no puede ser anterior a la fecha actual");
             }
 
             PacienteId = pacienteId;
