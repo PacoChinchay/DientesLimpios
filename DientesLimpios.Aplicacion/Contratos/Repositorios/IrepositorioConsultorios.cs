@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DientesLimpios.Aplicacion.Contratos.Repositorios
 {
-    public interface IrepositorioConsultorios: IRepositorio<Consultorio>
+    public interface IRepositorioConsultorios: IRepositorio<Consultorio>
     {
     }
 }

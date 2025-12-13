@@ -18,14 +18,14 @@ namespace DientesLimpios.Pruebas.Aplicacion.CasosDeUso.Consultorios
     [TestClass]
     public class CasoDeUsoCrearConsultorioTests
     {
-        private IrepositorioConsultorios _repositorio;
+        private IRepositorioConsultorios _repositorio;
         private IUnidadDeTrabajo _unidadDeTrabajo;
         private CasoDeUsoCrearConsultorio _casoDeUsoCrearConsultorio;
 
         [TestInitialize]
         public void setup()
         {
-            _repositorio = Substitute.For<IrepositorioConsultorios>();
+            _repositorio = Substitute.For<IRepositorioConsultorios>();
             _unidadDeTrabajo = Substitute.For<IUnidadDeTrabajo>();
 
             _casoDeUsoCrearConsultorio = new CasoDeUsoCrearConsultorio(_repositorio, _unidadDeTrabajo);
