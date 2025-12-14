@@ -4,7 +4,9 @@
     <Project Path="DientesLimpios.Aplicacion/DientesLimpios.Aplicacion.csproj" Id="07f6861d-443e-4506-82dd-b4fd35ad6c95" />
     <Project Path="DientesLimpios.Dominio/DientesLimpios.Dominio.csproj" />
   </Folder>
-  <Folder Name="/Infraestructura/" />
+  <Folder Name="/Infraestructura/">
+    <Project Path="DientesLimpiosPersistencia/DientesLimpios.Persistencia.csproj" Id="f74ad419-4de4-4ccf-a7c4-7b53d80f3c6b" />
+  </Folder>
   <Folder Name="/Pruebas/">
     <Project Path="DientesLimpios.Pruebas/DientesLimpios.Pruebas.csproj" Id="c1115f32-862c-4d08-a6e7-1d31ba25d883" />
   </Folder>
