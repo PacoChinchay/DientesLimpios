@@ -16,7 +16,7 @@ namespace DientesLimpios.Aplicacion
             this IServiceCollection services)
         {
             services.AddTransient<IMediator, MediadorSimple>();
-            services.AddScoped<IRequestHandler<ComandoCrearConsultorio, Guid>>();
+            services.AddScoped<IRequestHandler<ComandoCrearConsultorio, Guid>, CasoDeUsoCrearConsultorio>();
 
             services.AddScoped<IRequestHandler<ConsultaObtenerDetalleConsultorio, ConsultorioDetalleDTO>, CasoDeUsoObtenerDetalleConsultorio>();
             return services;
