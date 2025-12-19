@@ -12,7 +12,8 @@ namespace DientesLimpios.Aplicacion.CasosDeUso.Consultorios.Comandos.CrearConsul
         public validadorComandoCrearConsultorio()
         {
             RuleFor(p => p.Nombre)
-                .NotEmpty().WithMessage("El nombre del consultorio es obligatorio.");
+                .NotEmpty().WithMessage("El nombre del consultorio es obligatorio.")
+                .MaximumLength(150).WithMessage("La longitud del campo {PropertyName} debe ser menor o igual a {MaxLength}"); 
         }
     }
 }
