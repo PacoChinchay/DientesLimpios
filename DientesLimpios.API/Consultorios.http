@@ -11,3 +11,8 @@ Content-Type: application/json
 {
   "nombre": "Consultorio A"
 }
+
+###
+
+GET {{DientesLimpios.API_HostAddress}}
+Accept: application/json
