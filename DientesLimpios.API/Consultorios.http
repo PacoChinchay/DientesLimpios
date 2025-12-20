@@ -25,3 +25,12 @@ Content-Type: application/json
 {
   "nombre": "Consultorio AAAA"
 }
+
+###
+
+DELETE {{DientesLimpios.API_HostAddress}}/019b33c8-76c6-786c-b710-84c7d6e60e73
+Content-Type: application/json
+
+{
+  "nombre": "Consultorio AAAA"
+}
