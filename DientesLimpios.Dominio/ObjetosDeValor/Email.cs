@@ -9,7 +9,11 @@ namespace DientesLimpios.Dominio.ObjetosDeValor
 {
     public record Email
     {
-        public string valor { get; }
+        public string valor { get; } = null!;
+        private Email()
+        {
+            
+        }
         public Email(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
