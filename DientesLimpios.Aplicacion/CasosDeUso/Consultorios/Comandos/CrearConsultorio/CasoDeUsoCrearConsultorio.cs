@@ -22,9 +22,9 @@ namespace DientesLimpios.Aplicacion.CasosDeUso.Consultorios.Comandos.CrearConsul
             _unidadDeTrabajo = unidadDeTrabajo;
         }
 
-        public async Task<Guid> Handle(ComandoCrearConsultorio comando)
+        public async Task<Guid> Handle(ComandoCrearConsultorio request)
         {
-            var consultorio = new Consultorio(comando.Nombre);
+            var consultorio = new Consultorio(request.Nombre);
             try
             {
                 var respuesta = await _repositorio.Agregar(consultorio);
