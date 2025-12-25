@@ -9,8 +9,8 @@ POST {{DientesLimpios.API_HostAddress}}
 Content-Type: application/json
 
 {
-  "nombre": "Paciente A",
-  "email": "PacienteA@example.com"
+  "nombre": "Paciente B",
+  "email": "PacienteB@example.com"
 }
 
 ###
