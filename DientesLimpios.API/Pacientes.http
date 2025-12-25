@@ -15,7 +15,7 @@ Content-Type: application/json
 
 ###
 
-GET {{DientesLimpios.API_HostAddress}}
+GET {{DientesLimpios.API_HostAddress}}?pagina=1&registrosPorPagina=10
 Accept: application/json
 
 ###

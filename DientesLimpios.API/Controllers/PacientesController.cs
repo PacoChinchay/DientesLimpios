@@ -1,4 +1,5 @@
 ﻿using DientesLimpios.API.DTOs.Pacientes;
+using DientesLimpios.API.Utilidades;
 using DientesLimpios.Aplicacion.CasosDeUso.Pacientes.Comandos.CrearPaciente;
 using DientesLimpios.Aplicacion.CasosDeUso.Pacientes.Consultas.ObtenerListadoPacientes;
 using DientesLimpios.Aplicacion.Utilidades.Mediador;
@@ -26,11 +27,11 @@ namespace DientesLimpios.API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<PacienteListadoDTO>>> Get()
+        public async Task<ActionResult<List<PacienteListadoDTO>>> Get([FromQuery] ConsultaObtenerListadoPacientes consulta)
         {
-            var consulta = new ConsultaObtenerListadoPacientes();
             var resultado = await _mediator.Send(consulta);
-            return resultado;
+            HttpContext.InsertarPaginacionEnCabecera(resultado.Total);
+            return resultado.Elementos;
         }
     }
 }
