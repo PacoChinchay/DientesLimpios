@@ -25,9 +25,10 @@ Content-Type: application/json
 
 ###
 
-DELETE {{DientesLimpios.API_HostAddress}}/019b33c8-76c6-786c-b710-84c7d6e60e73
+PUT {{DientesLimpios.API_HostAddress}}/019b56e0-42b6-7da8-9f12-76f0c08378ea
 Content-Type: application/json
 
 {
-  "nombre": "Consultorio AAAA"
+  "nombre": "Paciente bb",
+  "email" : "PacienteBB@example.com"
 }
