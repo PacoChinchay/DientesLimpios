@@ -1,6 +1,7 @@
 ﻿using DientesLimpios.API.DTOs.Pacientes;
 using DientesLimpios.API.Utilidades;
 using DientesLimpios.Aplicacion.CasosDeUso.Pacientes.Comandos.ActualizarPaciente;
+using DientesLimpios.Aplicacion.CasosDeUso.Pacientes.Comandos.BorrarPaciente;
 using DientesLimpios.Aplicacion.CasosDeUso.Pacientes.Comandos.CrearPaciente;
 using DientesLimpios.Aplicacion.CasosDeUso.Pacientes.Consultas.ObtenerDetallePaciente;
 using DientesLimpios.Aplicacion.CasosDeUso.Pacientes.Consultas.ObtenerListadoPacientes;
@@ -48,6 +49,14 @@ namespace DientesLimpios.API.Controllers
         public async Task<IActionResult> Put(Guid id, ActualizarPacienteDTO actualizarPacienteDTO)
         {
             var comando = new ComandoActualizarPaciente { Id = id, Nombre = actualizarPacienteDTO.Nombre, Email = actualizarPacienteDTO.Email };
+            await _mediator.Send(comando);
+            return Ok();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var comando = new ComandoBorrarPaciente { Id = id};
             await _mediator.Send(comando);
             return Ok();
         }
